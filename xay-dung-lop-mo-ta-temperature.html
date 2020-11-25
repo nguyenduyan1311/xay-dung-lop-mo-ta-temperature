@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Temperature</title>
+    <script src="Temperature.js"></script>
+</head>
+<body>
+<input type="number" id="celsius">
+<button onclick="convertToF()">ConvertToF</button>
+<button onclick="convertToK()">ConvertToK</button>
+<br>
+Độ F: <p id="result-f"></p>
+Độ K: <p id="result-k"></p>
+<script>
+    let temp = new Temperature(0);
+    function convertToF() {
+        temp.celsius = +document.getElementById('celsius').value;
+        let result = temp.convertCtoF();
+        document.getElementById('result-f').innerText = result;
+    }
+    function convertToK() {
+        temp.celsius = +document.getElementById('celsius').value;
+        let result = temp.convertCtoK();
+        document.getElementById('result-k').innerText = result;
+    }
+</script>
+</body>
+</html>
